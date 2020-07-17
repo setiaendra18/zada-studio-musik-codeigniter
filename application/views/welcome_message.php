@@ -12,9 +12,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="container">
                 <div class="row">
                     <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                        <h1>Art Factory is free <strong>for YOU</strong></h1>
-                        <p>This template is available for 100% free of charge on TemplateMo. Download, modify and use this for your business website.</p>
-                        <a href="#about" class="main-button-slider">Find Out More</a>
+                        <h2>Art Factory is free <strong>for YOU</strong></h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quaerat culpa totam laboriosam ab quos facilis nam expedita obcaecati cum voluptatem dolores dolorem, debitis suscipit. Eaque consectetur distinctio nemo repellendus!</p>
+                        <a href="#about" class="main-button-slider">DAFTAR SEKEARANG</a>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
                         <img src="assets/images/slider-icon.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">

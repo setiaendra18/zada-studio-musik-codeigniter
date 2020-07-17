@@ -9,7 +9,7 @@
     <meta name="author" content="Template Mo">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
-    <title>Art Factory HTML CSS Template</title>
+    <title>Fosion Studio Musik Yogyakarta</title>
 <!--
 
 ART FACTORY
@@ -45,24 +45,19 @@ https://templatemo.com/tm-537-art-factory
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="#" class="logo">STUDIO MUSIK</a>
+                        <a href="#" class="logo">FUSION STUDIO</a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="<?php echo site_url('studio') ?>">About</a></li>
-                            <li class="scroll-to-section"><a href="#services">Services</a></li>
-                            <li class="scroll-to-section"><a href="#frequently-question">Frequently Questions</a></li>
-                            <li class="submenu">
-                                <a href="javascript:;">Drop Down</a>
-                                <ul>
-                                    <li><a href="">About Us</a></li>
-                                    <li><a href="">Features</a></li>
-                                    <li><a href="">FAQ's</a></li>
-                                    <li><a href="">Blog</a></li>
-                                </ul>
-                            </li>
-                            <li class="scroll-to-section"><a href="#contact-us">Contact Us</a></li>
+                            <li ><a href="<?php echo base_url('/') ?>">BERANDA</a></li>
+                            <li ><a href="<?php echo base_url('studio') ?>">STUDIO</a></li>
+                        
+                            <li ><a href="<?php echo base_url('pendaftaran') ?>">PENDAFTARAN</a></li>
+                         
+                            <li ><a href="<?php echo base_url('jadwal') ?>">JADWAL</a></li>
+                            <li ><a href="<?php echo base_url('studio') ?>">TENTANG KAMI</a></li>
+                            <li ><a href="<?php echo base_url('studio') ?>">KONTAK KAMI</a></li>
+                            <li><a href="<?php echo base_url('studio') ?>" class="btn btn-sm btn-danger">LOGIN</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
