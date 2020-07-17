@@ -4,7 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-
+<?php if($this->session->flashdata('msg')): ?>
+    <p><?php echo $this->session->flashdata('msg'); ?></p>
+<?php endif; ?>
     <!-- ***** Features Big Item Start ***** -->
     <section class="section" id="about2">
         <div class="container">
@@ -13,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="left-heading">
                         <h5>Pendaftaran Member</h5>
                     </div>
-                    <form action="/action_page.php">
+                    <form method="POST" action="<?=base_url('pendaftaran/simpan') ?>">
                     <div class="form-group">
     <label for="email">Nama lengkap</label>
     <input type="text" class="form-control" placeholder="Masukan nama lengkap" name="nama_member">
@@ -28,19 +30,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
   <div class="form-group">
     <label for="email">alamat</label>
-    <textarea class="form-control"  placeholder="Masukan alamat lengkap" rows="3"></textarea>
+    <textarea class="form-control"  placeholder="Masukan alamat lengkap" rows="3" name="alamat"></textarea>
    
   </div>
   <div class="form-group">
     <label for="email">Username:</label>
-    <input type="email" class="form-control" placeholder="Masukan username" id="email">
+    <input type="text" class="form-control" placeholder="Masukan username" name="username">
   </div>
   <div class="form-group">
     <label for="pwd">Password:</label>
-    <input type="password" class="form-control" placeholder="Masukan password" id="pwd">
+    <input type="password" class="form-control" placeholder="Masukan password" name="password">
   </div>
 
-  <button type="submit" class="btn btn-primary">DAFTAR</button>
+  <button type="submit" class="btn btn-primary btn-block">DAFTAR</button>
 </form> 
                 </div>
                 <div class="right-image col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
@@ -50,6 +52,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </section>
     <!-- ***** Features Big Item End ***** -->
-
-
+ 
     

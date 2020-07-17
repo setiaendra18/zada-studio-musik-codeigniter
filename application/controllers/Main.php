@@ -1,20 +1,20 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Jadwal extends CI_Controller {
+class Main extends CI_Controller {
 
-    function __construct(){
+	function __construct(){
 		parent::__construct();		
-		$this->load->model('m_jadwal');
+		$this->load->model('m_studio');
         $this->load->helper('url');
 	}
+
 	public function index()
 	{
-        
-        $data['jadwal'] = $this->m_jadwal->tampil_data()->result();
+		$data['studio'] = $this->m_studio->tampil_data()->result();
 
 		$this->load->view('template/frontend/header');
-		$this->load->view('jadwal/index',$data);
+		$this->load->view('main',$data);
 		$this->load->view('template/frontend/footer');
 	}
 }

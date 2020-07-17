@@ -50,13 +50,14 @@ https://templatemo.com/tm-537-art-factory
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li ><a href="<?php echo base_url('/') ?>">BERANDA</a></li>
-                            <li ><a href="<?php echo base_url('studio') ?>">STUDIO</a></li>
-                        
+                           
+                            <li ><a href="<?php echo base_url('booking') ?>">BOOKING</a></li>
                             <li ><a href="<?php echo base_url('pendaftaran') ?>">PENDAFTARAN</a></li>
                          
                             <li ><a href="<?php echo base_url('jadwal') ?>">JADWAL</a></li>
-                            <li ><a href="<?php echo base_url('studio') ?>">TENTANG KAMI</a></li>
+                           
                             <li ><a href="<?php echo base_url('studio') ?>">KONTAK KAMI</a></li>
+                            
                             <li><a href="<?php echo base_url('studio') ?>" class="btn btn-sm btn-danger">LOGIN</a></li>
                         </ul>
                         <a class='menu-trigger'>
