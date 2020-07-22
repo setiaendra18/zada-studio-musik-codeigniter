@@ -10,9 +10,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 mobile-bottom-fix">
-                    <div class="left-heading">
-                        <h5>JADWAL STUDIO MUSIK</h5>
+                
+                    <div class="pull-left">
+                        <h6>JADWAL STUDIO MUSIK</h6>
+                       
                     </div>
+                    <div class="pull-right">
+                          Tanggal Sekarang <?= date('d-m-Y') ?>
+                       
+                    </div>
+
+                    
                     <table class="table">
   <thead >
     <tr>
@@ -46,6 +54,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</tr>
     <?php } ?>
     </table>
+    <div class="alert alert-primary" role="alert">
+  Sistem hanya akan menampilkan jadwal tanggal sekarang dan sesudahnya, terima kasih
+</div>
                 </div>
                 
             </div>
