@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                         <h2>Art Factory is free <strong>for YOU</strong></h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quaerat culpa totam laboriosam ab quos facilis nam expedita obcaecati cum voluptatem dolores dolorem, debitis suscipit. Eaque consectetur distinctio nemo repellendus!</p>
-                        <a href="#about" class="main-button-slider">DAFTAR SEKEARANG</a>
+                        <a href="<?php echo base_url('pendaftaran') ?>" class="main-button-slider">DAFTAR SEKEARANG</a>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
                         <img src="assets/images/slider-icon.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
@@ -36,12 +36,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
                     <div class="left-heading">
-                        <h5>Vivamus sodales nisi id ante molestie venenatis</h5>
+                        <h5>Kualitas Audio Terbaik !</h5>
                     </div>
                     <div class="left-text">
                         <p>This template is <a href="#">last updated on 20 August 2019 </a>for main menu drop-down arrow and sub menu text color. Duis auctor dolor eu scelerisque vestibulum. Vestibulum lacinia, nisl sit amet tristique condimentum. <br><br>
                         Sed a consequat velit. Morbi lectus sapien, vestibulum et sapien sit amet, ultrices malesuada odio. Donec non quam euismod, mattis dui a, ultrices nisi.</p>
-                        <a href="#about2" class="main-button">Discover More</a>
+                        <a href="#about2" class="main-button">Pelajari lebih lanjut</a>
                     </div>
                 </div>
             </div>

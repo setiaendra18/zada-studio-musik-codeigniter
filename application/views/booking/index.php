@@ -21,11 +21,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <div class="form-group">
     <label for="email">Tanggal</label>
-    <input type="date" class="form-control" name="tanggal" required>
+    <input type="date" class="form-control" name="tanggal" min="<?= date('Y-m-d') ?>" value="<?= date('Y-m-d') ?>" required>
   </div>
 
   <div class="form-group">
-    <label for="email">Studio</label>
+    <label for="email">Pilih Jam :</label>
+    <select class="form-control"  name="id_jam">
+            <?php 
+
+            foreach($jam as $row)
+            { 
+              echo '<option value="'.$row->id_jam.'">'.$row->jam.'</option>';
+            }
+            ?>
+            </select>
+  </div>
+ 
+  <div class="form-group">
+    <label for="email">Pilih Studio :</label>
     <select class="form-control"  name="id_studio">
             <?php 
 

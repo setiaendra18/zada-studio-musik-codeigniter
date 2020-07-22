@@ -26,7 +26,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <tr>
       <th scope="col">No</th>
       <th scope="col">Tanggal</th>
+      <th scope="col">Jam</th>
       <th scope="col">Nama</th>
+      <th scope="col">alamat</th>
+      
       <th scope="col">Studio</th>
       <th scope="col">Status</th>
     </tr>
@@ -38,7 +41,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<tr>
 			<td><?php echo $no++ ?></td>
 			<td><?php echo $u->tanggal ?></td>
+      <td><?php echo $u->jam?></td>
 			<td><?php echo $u->nama_member?></td>
+      <td><?php echo $u->alamat?></td>
 			<td><?php echo $u->nama_studio ?></td>
 			<td>
         <?php if($u->status_sewa=="booking") { ?>  

@@ -18,10 +18,10 @@ https://templatemo.com/tm-537-art-factory
 
 -->
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/templatemo-art-factory.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/owl-carousel.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/templatemo-art-factory.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/owl-carousel.css">
 
     </head>
     

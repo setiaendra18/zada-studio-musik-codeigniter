@@ -13,6 +13,7 @@ class Booking extends CI_Controller {
 	{
         
         $data['booking'] = $this->m_booking->tampil_data()->result();
+        $data['jam'] = $this->m_booking->tampil_jam()->result();
 
 		$this->load->view('template/frontend/header');
 		$this->load->view('booking/index',$data);
@@ -23,14 +24,26 @@ class Booking extends CI_Controller {
         $id_member = $this->input->post('id_member');
         $tanggal = $this->input->post('tanggal');
         $id_studio = $this->input->post('id_studio');
+        $id_jam = $this->input->post('id_jam');
 		$data = array(
 			'id_member' => $id_member,
 			'tanggal' => $tanggal,
             'id_studio' => $id_studio,
-            'status_sewa'=>'booking',
+            'id_jam'=>$id_jam,
+            
 			);
 		$this->m_booking->simpan_data($data,'transaksi_sewa');
-        redirect('booking');
+        redirect('booking/konfirmasi');
     }
+
+    public function konfirmasi()
+    {
+        $data['konfirmasi'] = $this->m_booking->tampil_konfirmasi()->result();
+      
+		$this->load->view('template/frontend/header');
+		$this->load->view('booking/konfirmasi',$data);
+		$this->load->view('template/frontend/footer');
+    }
+    
 
 }
