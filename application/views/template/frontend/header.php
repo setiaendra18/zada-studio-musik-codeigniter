@@ -9,7 +9,7 @@
     <meta name="author" content="Template Mo">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
-    <title>Fosion Studio Musik Yogyakarta</title>
+    <title>FUSION Studio Musik Yogyakarta</title>
 <!--
 
 ART FACTORY
@@ -50,15 +50,50 @@ https://templatemo.com/tm-537-art-factory
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li ><a href="<?php echo base_url('/') ?>">BERANDA</a></li>
-                           
-                            <li ><a href="<?php echo base_url('booking') ?>">BOOKING</a></li>
+
+                            <?php 
+
+
+if($this->session->userdata('nama')=="")
+{
+    echo "";
+}
+else
+{
+?>
+    <li ><a href="<?php echo base_url('booking') ?>">BOOKING</a></>
+<?php
+}
+
+?>
+
+                            
                             <li ><a href="<?php echo base_url('pendaftaran') ?>">PENDAFTARAN</a></li>
                          
                             <li ><a href="<?php echo base_url('jadwal') ?>">JADWAL</a></li>
                            
                             <li ><a href="<?php echo base_url('studio') ?>">KONTAK KAMI</a></li>
+
+                            <?php 
+    
+                            if($this->session->userdata('nama')=="")
+                            {
+                            ?>
+                                <li><a href="<?php echo base_url('login') ?>" class='btn btn-sm btn-danger'>LOGIN</a>
+                                </li>
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                                <li><a href=<?php echo base_url('login/logout') ?>>logout (<?php echo $this->session->userdata("nama") ?> )</a>
+                            <?php
+                            }
+
+                            ?>
+
+                           
                             
-                            <li><a href="<?php echo base_url('studio') ?>" class="btn btn-sm btn-danger">LOGIN</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>

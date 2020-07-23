@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <form method="POST" action="<?=base_url('booking/simpan') ?>">
                     <div class="form-group">
     <label for="email">Nama lengkap</label>
-    <input type="text" class="form-control" placeholder="Masukan nama lengkap" name="id_member" readOnly value="1">
+    <input type="text" class="form-control" placeholder="Masukan nama lengkap" name="id_member" readOnly value="<?php echo $this->session->userdata("nama") ?>">
   </div>
 
   <div class="form-group">

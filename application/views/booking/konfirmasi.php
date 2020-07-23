@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 ?>
 
-<section class="section" id="about2">
+<section class="section"z id="about2">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 mobile-bottom-fix">
