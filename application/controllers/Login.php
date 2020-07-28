@@ -27,10 +27,13 @@ class Login extends CI_Controller {
 		$cek = $this->m_login->cek_login("member",$where)->num_rows();
 		$data = $this->m_login->cek_login("member",$where)->row_array();
 		
+	
 		if($cek > 0){
  
 			$data_session = array(
-				'nama' => $username,
+				'id_member'=> $data['id_member'],
+				'nama_member' => $data['nama_member'],
+				'username' => $username,
 				'status' => "login"
 				);
  
@@ -39,7 +42,12 @@ class Login extends CI_Controller {
 			redirect(base_url("/"));
  
 		}else{
-			echo "Username dan password salah !";
+			$this->session->set_flashdata('msg', 
+			'<div class="alert alert-danger">
+				<h4>Waduh</h4>
+				<p>Silahkan cek password dan username anda, kemudian coba login kembali.</p>
+			</div>');    
+redirect('login');
 		}
 	}
  

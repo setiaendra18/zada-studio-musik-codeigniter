@@ -54,7 +54,7 @@ https://templatemo.com/tm-537-art-factory
                             <?php 
 
 
-if($this->session->userdata('nama')=="")
+if($this->session->userdata('username')=="")
 {
     echo "";
 }
@@ -67,8 +67,22 @@ else
 
 ?>
 
+<?php 
+    
+    if($this->session->userdata('username')=="")
+    {
+    ?>
+         <li ><a href="<?php echo base_url('pendaftaran') ?>">PENDAFTARAN</a></li>
+    <?php
+    }
+    else
+    {
+     echo "";
+    }
+
+    ?>
                             
-                            <li ><a href="<?php echo base_url('pendaftaran') ?>">PENDAFTARAN</a></li>
+                           
                          
                             <li ><a href="<?php echo base_url('jadwal') ?>">JADWAL</a></li>
                            
@@ -76,7 +90,7 @@ else
 
                             <?php 
     
-                            if($this->session->userdata('nama')=="")
+                            if($this->session->userdata('username')=="")
                             {
                             ?>
                                 <li><a href="<?php echo base_url('login') ?>" class='btn btn-sm btn-danger'>LOGIN</a>
@@ -86,7 +100,7 @@ else
                             else
                             {
                             ?>
-                                <li><a href=<?php echo base_url('login/logout') ?>>logout (<?php echo $this->session->userdata("nama") ?> )</a>
+                                <li><a href=<?php echo base_url('login/logout') ?>>logout (<?php echo $this->session->userdata("nama_member") ?> )</a>
                             <?php
                             }
 

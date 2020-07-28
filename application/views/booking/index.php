@@ -11,12 +11,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="row">
                 <div class="col-sm-12 mobile-bottom-fix">
                     <div class="left-heading">
+                   
                         <h5>FORMULIR PEMESANAN STUDIO MUSIK</h5>
                     </div>
                     <form method="POST" action="<?=base_url('booking/simpan') ?>">
                     <div class="form-group">
     <label for="email">Nama lengkap</label>
-    <input type="text" class="form-control" placeholder="Masukan nama lengkap" name="id_member" readOnly value="<?php echo $this->session->userdata("nama") ?>">
+    <input type="text" class="form-control" placeholder="Masukan nama lengkap" name="id_member" readOnly value="<?php echo $this->session->userdata("nama_member") ?>">
   </div>
 
   <div class="form-group">
