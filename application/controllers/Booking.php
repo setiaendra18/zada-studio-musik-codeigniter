@@ -19,13 +19,16 @@ class Booking extends CI_Controller {
 		$this->load->view('booking/index',$data);
 		$this->load->view('template/frontend/footer');
     }
+
     public function simpan()
     {
         $id_transaksi = $this->input->post('id_transaksi');
         $id_member = $this->session->userdata('id_member');
         $tanggal = $this->input->post('tanggal');
         $id_studio = $this->input->post('id_studio');
+        $tarif = $this->input->post('tarif');
         $id_jam = $this->input->post('id_jam');
+       
 
 		$data = array(
             'id_transaksi'=> $id_transaksi,
@@ -33,11 +36,12 @@ class Booking extends CI_Controller {
 			'tanggal' => $tanggal,
             'id_studio' => $id_studio,
             'id_jam'=>$id_jam,
+           
             
 			);
         $this->m_booking->simpan_data($data,'transaksi_sewa');
-        
         $this->session->set_userdata('data_booking',$data);
+
         redirect('booking/konfirmasi',$data);
     }
 
@@ -76,15 +80,19 @@ class Booking extends CI_Controller {
          { 
             $data_bayar=$this->session->userdata('data_booking');
             $tipe_bayar = $this->input->post('tipe_bayar');
+            $nominal_bayar = $this->input->post('nominal_bayar');
 
+            
+           
             $bayar= array(
                 'id_transaksi'=> $data_bayar['id_transaksi'],
                 'tipe_bayar' => $tipe_bayar,
+                'nominal_bayar'=>$nominal_bayar,
                 );
-            
 
+          
             $this->m_booking->simpan_bayar($bayar,'bayar');
-           // $this->m_booking->simpan_detailbayar($data,'bayar');
+            //$this->m_booking->simpan_detailbayar($detailbayar,'detail_bayar');
             $upload_data = $this->upload->data(); 
            
             $this->session->set_flashdata('upload_sukses', 

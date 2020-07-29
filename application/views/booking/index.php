@@ -15,6 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <h5>FORMULIR PEMESANAN STUDIO MUSIK</h5>
                     </div>
                     <form method="POST" action="<?=base_url('booking/simpan') ?>">
+                    
                     <div class="form-group">
     <label for="email">Nomor Transaksi</label>
     <input type="text" class="form-control" placeholder="Masukan nama lengkap" name="id_transaksi" readOnly value=" <?php echo $no_invoice;?>">
@@ -37,6 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             foreach($jam as $row)
             { 
               echo '<option value="'.$row->id_jam.'">'.$row->jam.'</option>';
+            
             }
             ?>
             </select>

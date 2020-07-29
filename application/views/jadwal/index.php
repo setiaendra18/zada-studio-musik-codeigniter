@@ -32,6 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       
       <th scope="col">Studio</th>
       <th scope="col">Status</th>
+      <th scope="col">Status Bayar</th>
     </tr>
   </thead>
                     <?php 
@@ -54,6 +55,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <?php } ?>
         <?php if($u->status_sewa=="batal") { ?>  
           <span class="badge badge-danger"><?php echo $u->status_sewa ?></span>
+        <?php } ?>
+      </td>
+      <td>
+        <?php if($u->status_bayar=="peninjauan") { ?>  
+          <span class="badge badge-warning"><?php echo $u->status_bayar ?></span>
+        <?php } ?>
+        <?php if($u->status_bayar=="tolak") { ?>  
+          <span class="badge badge-danger"><?php echo $u->status_bayar ?></span>
+        <?php } ?>
+        <?php if($u->status_bayar=="terima") { ?>  
+          <span class="badge badge-success"><?php echo $u->status_bayar ?></span>
         <?php } ?>
       </td>
       
