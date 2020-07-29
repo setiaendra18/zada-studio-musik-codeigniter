@@ -56,6 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <span class="badge badge-danger"><?php echo $u->status_sewa ?></span>
         <?php } ?>
       </td>
+      
 		</tr>
     <?php } ?>
     </table>

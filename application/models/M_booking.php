@@ -6,7 +6,27 @@ class M_booking extends CI_Model{
     public $tanggal;
     public $id_studio;
  
-
+	function get_no_invoice()
+	{
+        $q = $this->db->query("SELECT MAX(RIGHT(id_transaksi,4)) AS kd_max FROM transaksi_sewa");
+		$kd = "";
+		
+		if($q->num_rows()>0)
+		{
+			foreach($q->result() as $k)
+			{
+                $tmp = ((int)$k->kd_max)+1;
+                $kd = sprintf("%04s", $tmp);
+            }
+		}
+		else
+		{
+            $kd = "0001";
+        }
+		date_default_timezone_set('Asia/Jakarta');
+		
+        return date('dmy').$kd;
+    }
 
 	function tampil_data()
 	{
@@ -32,6 +52,15 @@ class M_booking extends CI_Model{
 	}
 
     public function simpan_data($data,$table)
+    {
+        $this->db->insert($table,$data);
+	}
+	
+	public function simpan_bayar($data,$table)
+    {
+        $this->db->insert($table,$data);
+	}
+	public function simpan_detailbayar($data,$table)
     {
         $this->db->insert($table,$data);
     }

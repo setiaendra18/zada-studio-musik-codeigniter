@@ -12,15 +12,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div class="card">
   <div class="card-body">
-    NOMOR PESANAN : </br>
-    NAMA PEMESAN : asdfasf</br>
-    NOMINAL PEMBAYARAN : asfsf </br>
-    MINIMAL DP (DOWN PAYMENT) : IDR 10.0000 </br>
+   <?php  
+   $data_booking=$this->session->userdata('data_booking');
+   
+   ?>
+   <h5>NOMOR TRANSAKSI : <?= $data_booking['id_transaksi'] ?></h5>
+   
+   <hr>
     <?php
            echo form_open_multipart('booking/upload');
            if (isset($error))
            echo '<p>'.$error.'</p>';
         ?>
+        <select name="tipe_bayar">
+          <option value="dp">DOWN PAYMENT</option>
+          <option value="lunas">PELUNASAN</option>
+        </select>
         <input type="file" name="bukti_bayar">
         <button type="submit" class="btn btn-success">KONFIRMASI PEMBAYARAN</button>
         <?php 
