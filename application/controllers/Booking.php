@@ -62,44 +62,46 @@ class Booking extends CI_Controller {
     public function upload()
     {
        
-        $config['upload_path']   = './assets/images/'; 
+        $config['upload_path']   = './assets/images/bukti_bayar'; 
         $config['allowed_types'] = 'gif|jpg|png|JPG|JPEG|PNG'; 
-      
-         $this->load->library('upload', $config);
+        $config['overwrite'] = TRUE;
+        
+        $this->load->library('upload', $config);
             
-         if ( ! $this->upload->do_upload('bukti_bayar'))
-         {
-
+        if (!$this->upload->do_upload('bukti_bayar'))
+        {
             $error = $this->upload->display_errors();
             $this->load->view('template/frontend/header'); 
             $this->load->view('booking/konfirmasi', compact('error'));
             $this->load->view('template/frontend/footer'); 
-         }
-            
-         else
-         { 
+        }
+        else
+        { 
             $data_bayar=$this->session->userdata('data_booking');
             $tipe_bayar = $this->input->post('tipe_bayar');
             $nominal_bayar = $this->input->post('nominal_bayar');
-
-            
            
+           
+            
             $bayar= array(
                 'id_transaksi'=> $data_bayar['id_transaksi'],
                 'tipe_bayar' => $tipe_bayar,
+                'bukti_bayar'=> $this->upload->data('file_name'),
                 'nominal_bayar'=>$nominal_bayar,
                 );
 
-          
             $this->m_booking->simpan_bayar($bayar,'bayar');
-            //$this->m_booking->simpan_detailbayar($detailbayar,'detail_bayar');
+           
             $upload_data = $this->upload->data(); 
            
             $this->session->set_flashdata('upload_sukses', 
             '<div class="alert alert-success">
             <p>UPLOAD BUKTI TRANSAKSI SUKSES</p>
             </div>');
+
+            
             $this->session->unset_userdata('data_booking');
+            
             $this->load->view('template/frontend/header');
             $this->load->view('booking/konfirmasi', compact('upload_data')); 
             $this->load->view('template/frontend/footer');
@@ -107,6 +109,7 @@ class Booking extends CI_Controller {
       
        
     }
+    
     
 
 }

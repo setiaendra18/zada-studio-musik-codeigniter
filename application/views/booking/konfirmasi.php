@@ -27,13 +27,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          <div class="form-group">
     <label>NOMINAL TRANSFER</label>
     <input type="number" class="form-control" name="nominal_bayar" placeholder="Masukan nominal yang di bayarkan">
-   
   </div>
         <select name="tipe_bayar">
           <option value="dp">DOWN PAYMENT</option>
           <option value="lunas">PELUNASAN</option>
         </select>
-
         <input type="file" name="bukti_bayar">
         <button type="submit" class="btn btn-success">KONFIRMASI PEMBAYARAN</button>
         <?php 

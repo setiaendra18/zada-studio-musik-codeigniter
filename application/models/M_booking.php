@@ -60,10 +60,6 @@ class M_booking extends CI_Model{
     {
         $this->db->insert($table,$data);
 	}
-	public function simpan_detailbayar($data,$table)
-    {
-        $this->db->insert($table,$data);
-	}
 	
 	
 }
