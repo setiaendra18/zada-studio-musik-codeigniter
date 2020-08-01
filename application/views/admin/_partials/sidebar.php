@@ -37,7 +37,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Manajemen Stduio</h6>
             <a class="collapse-item" href="<?php echo base_url('admin/studio') ?>">Studio & Tarif</a>
-            <a class="collapse-item" href="<?php echo base_url('admin/studio') ?>">Jam Kerja</a>
+            <a class="collapse-item" href="<?php echo base_url('admin/jam') ?>">Jam Kerja</a>
           </div>
         </div>
       </li>
@@ -79,3 +79,6 @@
 
     </ul>
     <!-- End of Sidebar -->
+   
+   
+    <?php $this->load->view("/admin/_partials/top-bar.php") ?>

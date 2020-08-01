@@ -1,5 +1,4 @@
-
-  
+<?php $this->load->view("/admin/_partials/header.php") ?>
 
   
 
@@ -347,4 +346,4 @@
       </div>
       <!-- End of Main Content -->
 
-     
+      <?php $this->load->view("admin/_partials/footer.php") ?>

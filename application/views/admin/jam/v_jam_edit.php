@@ -1,0 +1,32 @@
+
+<?php $this->load->view("/admin/_partials/header.php") ?>
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+<!-- Page Heading -->
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+  <h4>EDIT DATA JAM OPERASIONAL STUDIO</h4>
+  </div>
+  <div class="card-body">
+
+  <?php foreach($jam as $u){ ?>
+  <form method="POST" action="<?=base_url('admin/jam/update') ?>">
+  <input type="hidden" name="id_jam" value="<?php echo $u->id_jam ?>">
+  <div class="form-group">
+    <label>Jam</label>
+    <input type="text" class="form-control" name="jam" value="<?php echo $u->jam ?>">
+  </div>
+  <button type="submit" class="btn btn-success">UPDATE</button>
+</form>
+<?php } ?>
+  </div>
+</div>
+
+</div>
+<!-- /.container-fluid -->
+
+<?php $this->load->view("admin/_partials/footer.php") ?>

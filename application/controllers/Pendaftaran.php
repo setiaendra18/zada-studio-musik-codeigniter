@@ -35,7 +35,7 @@ class Pendaftaran extends CI_Controller {
 			'no_tlpn' => $no_tlpn,
 			);
 		$this->m_pendaftaran->simpan_data($data,'member');
-		$this->session->set_flashdata('msg', 'Room added');
+		
 		redirect('pendaftaran');
     }
 }
