@@ -55,7 +55,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 $route['admin'] = 'admin/login';
-$route['admin/index'] = 'admin/admin/index';
+$route['admin/dashboard'] = 'admin/dashboard';
 
 $route['admin/studio/v_studio'] = 'admin/studio';
 $route['admin/studio/v_studio_tambah'] = 'admin/studio/tambah';
@@ -64,5 +64,9 @@ $route['admin/studio/v_studio_edit'] = 'admin/studio/edit';
 $route['admin/jam/v_jam'] = 'admin/jam';
 $route['admin/jam/v_jam_tambah'] = 'admin/jam/tambah';
 $route['admin/jam/v_jam_edit'] = 'admin/jam/edit';
+
+$route['admin/jam/v_transaksi'] = 'admin/transaksi';
+$route['admin/jam/v_transaksi_edit'] = 'admin/transaksi/edit';
+
 
 $route['admin/cek_login'] = 'admin/login/cek_login';
