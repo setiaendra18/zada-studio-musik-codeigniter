@@ -13,26 +13,36 @@
   </div>
   <div class="card-body">
 
-  <?php foreach($studio as $u){ ?>
-  <form method="POST" action="<?=base_url('admin/studio/update') ?>">
-  <input type="hidden" name="id_studio" value="<?php echo $u->id_studio ?>">
+  <?php foreach($pembayaran as $u){ ?>
+  <form method="POST" action="<?=base_url('admin/pembayaran/update') ?>">
+  <input type="hidden" name="id_bayar" value="<?php echo $u->id_bayar ?>">
   <div class="form-group">
-    <label>Nama Studio</label>
-    <input type="text" class="form-control" name="nama_studio" value="<?php echo $u->nama_studio ?>">
+    <label>Nomor Transaksi</label>
+    <input type="text" class="form-control" name="id_transaksi" value="<?php echo $u->id_transaksi ?>" readOnly>
   </div>
   <div class="form-group">
-    <label>Tarif Sewa</label>
-    <input type="number" class="form-control" name="tarif" value="<?php echo $u->tarif ?>">
+    <label>Tipe Pembayaran</label>
+    <input type="text" class="form-control"  value="<?php echo $u->tipe_bayar ?>" readOnly>
   </div>
   <div class="form-group">
-    <label>Deskripsi</label>
-    <textarea class="form-control" name="deskripsi" rows="3"><?php echo $u->deskripsi?></textarea>
+    <label>Nominal Transfer</label>
+    <input type="text" class="form-control"  value="<?php echo $u->nominal_bayar ?>" readOnly>
   </div>
   <div class="form-group">
-    <label>Foto</label>
-    <input type="file" class="form-control" name="gambar">
+    <label>Bukti Transfer</label></br>
+    <img src="<?php echo base_url();?>/assets/images/bukti_bayar/<?php echo $u->bukti_bayar ?>" class="img-fluid">
   </div>
+  <div class="form-group">
+    <label>Status Pembayaran</label>
+    <select name="status_bayar" class="form-control">
+      <option value="peninjauan">PENINJAUAN</option>
+      <option value="terima">TERIMA</option>
+      <option value="tolak">TOLAK</option>
+</select>
+  </div> 
   <button type="submit" class="btn btn-success">UPDATE</button>
+  <a href="<?= base_url('admin/transaksi/edit/')?><?= trim($u->id_transaksi) ?>" class="btn btn-danger">RUBAH STATUS BOOKING</a>
+  
 </form>
 <?php } ?>
   </div>

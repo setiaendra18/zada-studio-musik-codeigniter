@@ -38,32 +38,27 @@ class Pembayaran extends CI_Controller {
 
 	public function update()
 	{
-		$id_pembayaran= $this->input->post('id_pembayaran');
-		$nama_pembayaran= $this->input->post('nama_pembayaran');
-		$tarif= $this->input->post('tarif');
-		$deskripsi= $this->input->post('deskripsi');
-		
-		
+		$id_bayar= $this->input->post('id_bayar');
+		$status_bayar= $this->input->post('status_bayar');
+			
 		$data = array(
-			'nama_pembayaran' => $nama_pembayaran,
-			'tarif' => $tarif,
-			'deskripsi' => $deskripsi,
+			'status_bayar' => $status_bayar,
 			);
-		$where = array('id_pembayaran' => $id_pembayaran);
-		$this->m_pembayaran->update_data($where,$data,'pembayaran');
-		redirect('admin/pembayaran/v_pembayaran');
+		$where = array('id_bayar' => $id_bayar);
+		$this->m_pembayaran->update_data($where,$data,'bayar');
+		redirect('admin/pembayaran/');
 	}
 
-	public function edit($id_pembayaran)
+	public function edit($id_bayar)
 	{
-		$where = array('id_pembayaran' => $id_pembayaran);
-		$data['pembayaran'] = $this->m_pembayaran->edit_data($where,'pembayaran_sewa')->result();
+		$where = array('id_bayar' => $id_bayar);
+		$data['pembayaran'] = $this->m_pembayaran->edit_data($where,'bayar')->result();
 		$this->load->view('admin/pembayaran/v_pembayaran_edit',$data);
 	}
-	public function hapus($id_pembayaran)
+	public function hapus($id_bayar)
 	{
-        $where = array('id_pembayaran' => $id_pembayaran);
-		$this->m_pembayaran->hapus_data($where,'pembayaran_sewa');
+        $where = array('id_bayar' => $id_bayar);
+		$this->m_pembayaran->hapus_data($where,'bayar');
         redirect('admin/pembayaran');
     }
 }

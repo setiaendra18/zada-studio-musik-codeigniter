@@ -23,17 +23,23 @@ class Admin extends CI_Controller {
 	public function simpan()
 	{
 		$nama_admin= $this->input->post('nama_admin');
-		$tarif= $this->input->post('tarif');
-		$deskripsi= $this->input->post('deskripsi');
- 
+		$username= $this->input->post('username');
+		$password= $this->input->post('password');
+		$email= $this->input->post('email');
+		$no_tlpn= $this->input->post('no_tlpn');
+		$alamat= $this->input->post('alamat');
+		
 		$data = array(
 			'nama_admin' => $nama_admin,
-			'tarif' => $tarif,
-			'deskripsi' => $deskripsi,
+			'username' => $username,
+			'password' => $password,
+			'email' => $email,
+			'no_tlpn' => $no_tlpn,
+			'alamat' => $alamat,
 			);
 		$this->m_admin->simpan_data($data,'admin');
 
-		redirect('admin/v_admin');
+		redirect('admin/admin');
 	}
 
 	public function update()

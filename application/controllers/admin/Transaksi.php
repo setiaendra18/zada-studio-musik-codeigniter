@@ -33,8 +33,8 @@ class Transaksi extends CI_Controller {
 
 	public function edit($id_transaksi)
 	{
-		$where = array('id_transaksi' => $id_transaksi);
-		$data['transaksi'] = $this->m_transaksi->edit_data($where,'transaksi_sewa')->result();
+	
+		$data['transaksi'] = $this->m_transaksi->edit_data($id_transaksi,'transaksi_sewa')->result();
 		$this->load->view('admin/transaksi/v_transaksi_edit',$data);
 	}
 	public function hapus($id_transaksi)

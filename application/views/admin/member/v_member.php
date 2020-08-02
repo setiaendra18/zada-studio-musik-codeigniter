@@ -8,12 +8,7 @@
 <div class="card shadow mb-4">
   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
   <h6 class="m-0 font-weight-bold text-primary">Data Member Fusion Studio Musik</h6>
-  <a href="<?php echo base_url('admin/jam/tambah') ?>" class="btn btn-primary btn-icon-split btn-sm pull-right">
-                    <span class="icon text-white-50">
-                      <i class="fas fa-plus"></i>
-                    </span>
-                    <span class="text">TAMBAH</span>
-                  </a>
+
   </div>
   <div class="card-body">
     <div >
