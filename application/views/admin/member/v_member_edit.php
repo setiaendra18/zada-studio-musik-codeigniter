@@ -8,12 +8,14 @@
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
-  <div class="card-header py-3">
-  <h4>EDIT DATA MEMBER</h4>
+<?php foreach($member as $u){ ?>
+<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+  <h6 class="m-0 font-weight-bold text-primary">Edit Data Member : <?php echo $u->nama_member ?></h6>
+
   </div>
   <div class="card-body">
 
-  <?php foreach($member as $u){ ?>
+
   <form method="POST" action="<?=base_url('admin/member/update') ?>">
   <input type="hidden" name="id_member" value="<?php echo $u->id_member ?>">
   <div class="form-group">

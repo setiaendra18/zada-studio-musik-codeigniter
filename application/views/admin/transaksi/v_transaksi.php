@@ -51,6 +51,7 @@
         <?php } ?>
         <?php if($u->status_sewa=="batal") { ?>  
           <span class="badge badge-danger"><?php echo $u->status_sewa ?></span>
+      
         <?php } ?>
       </td>
       <td>
@@ -63,6 +64,7 @@
         <?php if($u->status_bayar=="terima") { ?>  
           <span class="badge badge-success"><?php echo $u->status_bayar ?></span>
         <?php } ?>
+        
       </td>
             <td>
             <a href="<?= base_url('admin/transaksi/edit/')?><?= trim($u->id_transaksi) ?>" class="btn btn-success btn-circle btn-sm">

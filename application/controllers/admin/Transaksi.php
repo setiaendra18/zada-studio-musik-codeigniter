@@ -15,43 +15,20 @@ class Transaksi extends CI_Controller {
 		$this->load->view('admin/transaksi/v_transaksi',$data);
 	}
 
-	public function tambah()
-	{
-		$this->load->view('admin/transaksi/v_transaksi_tambah');
-	}
-
-	public function simpan()
-	{
-		$nama_transaksi= $this->input->post('nama_transaksi');
-		$tarif= $this->input->post('tarif');
-		$deskripsi= $this->input->post('deskripsi');
- 
-		$data = array(
-			'nama_transaksi' => $nama_transaksi,
-			'tarif' => $tarif,
-			'deskripsi' => $deskripsi,
-			);
-		$this->m_transaksi->simpan_data($data,'transaksi');
-
-		redirect('admin/transaksi/v_transaksi');
-	}
-
 	public function update()
 	{
 		$id_transaksi= $this->input->post('id_transaksi');
-		$nama_transaksi= $this->input->post('nama_transaksi');
-		$tarif= $this->input->post('tarif');
-		$deskripsi= $this->input->post('deskripsi');
-		
+		$tanggal= $this->input->post('tanggal');
+		$id_member= $this->input->post('id_member');
+		$id_jam= $this->input->post('id_jam');
+		$status_sewa= $this->input->post('status_sewa');
 		
 		$data = array(
-			'nama_transaksi' => $nama_transaksi,
-			'tarif' => $tarif,
-			'deskripsi' => $deskripsi,
+			'status_sewa' => $status_sewa,
 			);
 		$where = array('id_transaksi' => $id_transaksi);
-		$this->m_transaksi->update_data($where,$data,'transaksi');
-		redirect('admin/transaksi/v_transaksi');
+		$this->m_transaksi->update_data($where,$data,'transaksi_sewa');
+		redirect('admin/transaksi/');
 	}
 
 	public function edit($id_transaksi)

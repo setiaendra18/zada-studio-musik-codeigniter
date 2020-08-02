@@ -10,7 +10,7 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-  <a href="<?php echo base_url('admin/studio/tambah') ?>" class="btn btn-primary btn-icon-split pull-right">
+  <a href="<?php echo base_url('admin/studio/tambah') ?>" class="btn btn-primary btn-sm btn-icon-split pull-right">
                     <span class="icon text-white-50">
                       <i class="fas fa-plus"></i>
                     </span>

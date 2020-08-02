@@ -4,13 +4,11 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-<!-- Page Heading -->
-<h1 class="h4 mb-2 text-gray-800">DATA JAM STUDIO MUSIK</h1>
-
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
-  <div class="card-header py-3">
-  <a href="<?php echo base_url('admin/jam/tambah') ?>" class="btn btn-primary btn-icon-split pull-right">
+<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+  <h6 class="m-0 font-weight-bold text-primary">Data Jam Operasional Fusion Studio Musik</h6>
+  <a href="<?php echo base_url('admin/jam/tambah') ?>" class="btn btn-primary btn-icon-split btn-sm pull-right">
                     <span class="icon text-white-50">
                       <i class="fas fa-plus"></i>
                     </span>

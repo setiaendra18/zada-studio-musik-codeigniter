@@ -22,7 +22,8 @@ class M_transaksi extends CI_Model{
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
-	function edit_data($where,$table){		
+	function edit_data($where,$table)
+	{		
 		return $this->db->get_where($table,$where);
 	}
 	function update_data($where,$data,$table){
