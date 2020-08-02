@@ -51,7 +51,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Manajemen Transaksi</h6>
             <a class="collapse-item" href="<?php echo base_url('admin/transaksi') ?>">Transaksi Sewa</a>
-            <a class="collapse-item" href="<?php echo base_url('admin/studio') ?>">Pembayaran</a>
+            <a class="collapse-item" href="<?php echo base_url('admin/pembayaran') ?>">Pembayaran</a>
           </div>
         </div>
       </li>
@@ -64,8 +64,8 @@
         <div id="pengguna" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Manajemen Pengguna</h6>
-            <a class="collapse-item" href="<?php echo base_url('admin/studio') ?>">Member</a>
-            <a class="collapse-item" href="<?php echo base_url('admin/studio') ?>">Admin</a>
+            <a class="collapse-item" href="<?php echo base_url('admin/member') ?>">Member</a>
+            <a class="collapse-item" href="<?php echo base_url('admin/admin') ?>">Admin</a>
           </div>
         </div>
       </li>

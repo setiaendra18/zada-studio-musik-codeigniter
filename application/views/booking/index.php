@@ -17,8 +17,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <form method="POST" action="<?=base_url('booking/simpan') ?>">
                     
                     <div class="form-group">
-    <label for="email">Nomor Transaksi</label>
-    <input type="text" class="form-control" placeholder="Masukan nama lengkap" name="id_transaksi" readOnly value=" <?php echo $no_invoice;?>">
+    <label>Nomor Transaksi</label>
+    <input type="text" class="form-control" placeholder="Masukan nama lengkap" name="id_transaksi" readOnly value="<?php echo $no_invoice;?>">
   </div>
                     <div class="form-group">
     <label for="email">Nama lengkap</label>

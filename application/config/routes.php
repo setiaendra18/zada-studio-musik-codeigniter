@@ -68,5 +68,16 @@ $route['admin/jam/v_jam_edit'] = 'admin/jam/edit';
 $route['admin/jam/v_transaksi'] = 'admin/transaksi';
 $route['admin/jam/v_transaksi_edit'] = 'admin/transaksi/edit';
 
+$route['admin/pembayaran/v_bayar'] = 'admin/pembayaran';
+$route['admin/pembayaran/v_bayar_edit'] = 'admin/pembayaran/edit';
+
+
+$route['admin/member/v_member'] = 'admin/member';
+$route['admin/member/v_member_edit'] = 'admin/member/edit';
+
+
+$route['admin/member/v_admin'] = 'admin/admin';
+$route['admin/member/v_admin_edit'] = 'admin/admin/edit';
+
 
 $route['admin/cek_login'] = 'admin/login/cek_login';

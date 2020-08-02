@@ -65,11 +65,11 @@
         <?php } ?>
       </td>
             <td>
-            <a href="<?= base_url('admin/studio/edit/') ?><?= $u->id_studio?>" class="btn btn-success btn-circle btn-sm">
+            <a href="<?= base_url('admin/transaksi/edit/')?><?= trim($u->id_transaksi) ?>" class="btn btn-success btn-circle btn-sm">
                     <i class="fas fa-edit"></i>
                   </a>
          
-              <a href="<?= base_url('admin/studio/hapus/') ?><?= $u->id_studio?>" class="btn btn-danger btn-circle btn-sm">
+              <a href="<?= base_url('admin/transaksi/hapus/') ?><?= trim($u->id_transaksi)?>" class="btn btn-danger btn-circle btn-sm">
                     <i class="fas fa-trash"></i>
                   </a>
             </td>

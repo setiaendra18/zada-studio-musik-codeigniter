@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class transaksi extends CI_Controller {
+class Transaksi extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();		
@@ -57,13 +57,13 @@ class transaksi extends CI_Controller {
 	public function edit($id_transaksi)
 	{
 		$where = array('id_transaksi' => $id_transaksi);
-		$data['transaksi'] = $this->m_transaksi->edit_data($where,'transaksi')->result();
+		$data['transaksi'] = $this->m_transaksi->edit_data($where,'transaksi_sewa')->result();
 		$this->load->view('admin/transaksi/v_transaksi_edit',$data);
 	}
 	public function hapus($id_transaksi)
 	{
         $where = array('id_transaksi' => $id_transaksi);
-		$this->m_transaksi->hapus_data($where,'transaksi');
-        redirect('admin/transaksi/v_transaksi');
+		$this->m_transaksi->hapus_data($where,'transaksi_sewa');
+        redirect('admin/transaksi');
     }
 }
