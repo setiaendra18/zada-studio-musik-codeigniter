@@ -24,10 +24,21 @@
     <label>Tipe Pembayaran</label>
     <input type="text" class="form-control"  value="<?php echo $u->tipe_bayar ?>" readOnly>
   </div>
+ 
+  <div class="form-group">
+    <label>Total Harga Sewa</label>
+    <input type="text" class="form-control"  value="<?php echo $u->tarif ?>" readOnly>
+  </div>
   <div class="form-group">
     <label>Nominal Transfer</label>
-    <input type="text" class="form-control"  value="<?php echo $u->nominal_bayar ?>" readOnly>
+    <input type="text" class="form-control"  name="nominal_bayar" value="<?php echo $u->nominal_bayar ?>">
   </div>
+  <div class="form-group">
+    <label>Kekurangan</label>
+    <?php $kurang=($u->tarif-$u->nominal_bayar); ?>
+    <input type="text" class="form-control"  value="<?= $kurang ?>" readOnly>
+  </div>
+
   <div class="form-group">
     <label>Bukti Transfer</label></br>
     <img src="<?php echo base_url();?>/assets/images/bukti_bayar/<?php echo $u->bukti_bayar ?>" class="img-fluid">
@@ -39,6 +50,12 @@
       <option value="terima">TERIMA</option>
       <option value="tolak">TOLAK</option>
 </select>
+<div class="form-group">
+<div class="form-group">
+    <label >Keterangan</label>
+    <textarea class="form-control" name="keterangan" rows="3" placeholder="Masukan Keterangan tambahan jika perlu"><?= $u->keterangan ?></textarea>
+  </div>
+  </div>
   </div> 
   <button type="submit" class="btn btn-success">UPDATE</button>
   <a href="<?= base_url('admin/transaksi/edit/')?><?= trim($u->id_transaksi) ?>" class="btn btn-danger">RUBAH STATUS BOOKING</a>

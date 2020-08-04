@@ -19,8 +19,13 @@ class M_pembayaran extends CI_Model{
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
-	function edit_data($where,$table){		
-		return $this->db->get_where($table,$where);
+	function edit_data($id_bayar){		
+		$this->db->select('*');
+		$this->db->join('transaksi_sewa', 'bayar.id_transaksi = transaksi_sewa.id_transaksi','left');
+		$this->db->join('member', 'transaksi_sewa.id_member = member.id_member','left');
+		$this->db->join('studio', 'transaksi_sewa.id_studio = studio.id_studio','left');
+		$this->db->where('bayar.id_bayar=',$id_bayar);
+		return $this->db->get('bayar');
 	}
 	function update_data($where,$data,$table){
 		$this->db->where($where);

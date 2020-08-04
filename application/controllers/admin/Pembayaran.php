@@ -20,30 +20,20 @@ class Pembayaran extends CI_Controller {
 		$this->load->view('admin/pembayaran/v_pembayaran_tambah');
 	}
 
-	public function simpan()
-	{
-		$nama_pembayaran= $this->input->post('nama_pembayaran');
-		$tarif= $this->input->post('tarif');
-		$deskripsi= $this->input->post('deskripsi');
- 
-		$data = array(
-			'nama_pembayaran' => $nama_pembayaran,
-			'tarif' => $tarif,
-			'deskripsi' => $deskripsi,
-			);
-		$this->m_pembayaran->simpan_data($data,'pembayaran');
-
-		redirect('admin/pembayaran/v_pembayaran');
-	}
 
 	public function update()
 	{
 		$id_bayar= $this->input->post('id_bayar');
 		$status_bayar= $this->input->post('status_bayar');
-			
+		$keterangan= $this->input->post('keterangan');
+		$nominal_bayar= $this->input->post('nominal_bayar');
+
 		$data = array(
 			'status_bayar' => $status_bayar,
+			'keterangan' => $keterangan,
+			'nominal_bayar' => $nominal_bayar,
 			);
+
 		$where = array('id_bayar' => $id_bayar);
 		$this->m_pembayaran->update_data($where,$data,'bayar');
 		redirect('admin/pembayaran/');
@@ -51,8 +41,8 @@ class Pembayaran extends CI_Controller {
 
 	public function edit($id_bayar)
 	{
-		$where = array('id_bayar' => $id_bayar);
-		$data['pembayaran'] = $this->m_pembayaran->edit_data($where,'bayar')->result();
+		
+		$data['pembayaran'] = $this->m_pembayaran->edit_data($id_bayar,'bayar')->result();
 		$this->load->view('admin/pembayaran/v_pembayaran_edit',$data);
 	}
 	public function hapus($id_bayar)

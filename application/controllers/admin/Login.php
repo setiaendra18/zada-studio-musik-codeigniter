@@ -29,22 +29,27 @@ class Login extends CI_Controller {
 		if($cek > 0){
  
 			$data_session = array(
-				'nama' => $username,
+				'id_admin'=> $data['id_admin'],
+				'nama_admin' => $data['nama_admin'],
+				'username' => $username,
 				'status' => "login"
 				);
+				
+			$this->session->set_userdata('login_admin',$data_session);
  
-			$this->session->set_userdata($data_session);
- 
-			redirect(base_url("admin/dashboard"));
+			redirect('admin/dashboard',$data_session);
  
 		}else{
-			echo "Username dan password salah !";
+			$this->session->set_flashdata('gagal', 
+            '<div class="alert alert-danger">
+            <p>PASSWORD ATAU USERNAME SALAH</p>
+            </div>');
 			redirect(base_url("admin/"));
 		}
 	}
  
 	public function logout(){
-		$this->session->sess_destroy();
+		$this->session->unset_userdata('login_admin');
 		redirect(base_url('login'));
 	}
 }

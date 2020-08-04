@@ -56,6 +56,7 @@
                     <span class="text">CEK PEMBAYARAN</span>
                   </a>
   </div>
+  <?php if($u->status_bayar=="peninjauan") { echo ""; } else { ?>
   <div class="form-group">
     <label>Status Sewa</label>
     <select name="status_sewa" class="form-control">
@@ -64,8 +65,10 @@
       <option value="batal">BATAL</option>
 </select>
   </div>
-  
   <button type="submit" class="btn btn-success">UPDATE</button>
+  <?php  } ?>
+  
+  
 </form>
 <?php } ?>
   </div>
