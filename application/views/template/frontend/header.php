@@ -86,7 +86,7 @@ else
                          
                             <li ><a href="<?php echo base_url('jadwal') ?>">JADWAL</a></li>
                            
-                            <li ><a href="<?php echo base_url('studio') ?>">KONTAK KAMI</a></li>
+                           
 
                             <?php 
     

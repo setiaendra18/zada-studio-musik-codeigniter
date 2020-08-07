@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    <h5>NOMOR TRANSAKSI : <?= $data_booking['id_transaksi'] ?></h5>
    
    <hr>
-    <?php
+    <?php 
            echo form_open_multipart('booking/upload');
            if (isset($error))
            echo '<p>'.$error.'</p>';

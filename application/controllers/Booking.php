@@ -65,7 +65,6 @@ class Booking extends CI_Controller {
         $config['upload_path']   = './assets/images/bukti_bayar'; 
         $config['allowed_types'] = 'gif|jpg|png|JPG|JPEG|PNG'; 
         $config['overwrite'] = TRUE;
-        
         $this->load->library('upload', $config);
             
         if (!$this->upload->do_upload('bukti_bayar'))
@@ -80,8 +79,6 @@ class Booking extends CI_Controller {
             $data_bayar=$this->session->userdata('data_booking');
             $tipe_bayar = $this->input->post('tipe_bayar');
             $nominal_bayar = $this->input->post('nominal_bayar');
-           
-           
             
             $bayar= array(
                 'id_transaksi'=> $data_bayar['id_transaksi'],

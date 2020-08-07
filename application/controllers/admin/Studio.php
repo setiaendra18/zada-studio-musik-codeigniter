@@ -6,7 +6,7 @@ class Studio extends CI_Controller {
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('m_studio');
-        $this->load->helper('url');
+		$this->load->helper(array('form', 'url')); 
 	}
 
 	public function index()
@@ -22,18 +22,36 @@ class Studio extends CI_Controller {
 
 	public function simpan()
 	{
-		$nama_studio= $this->input->post('nama_studio');
-		$tarif= $this->input->post('tarif');
-		$deskripsi= $this->input->post('deskripsi');
- 
-		$data = array(
-			'nama_studio' => $nama_studio,
-			'tarif' => $tarif,
-			'deskripsi' => $deskripsi,
-			);
-		$this->m_studio->simpan_data($data,'studio');
+		$config['upload_path']   = './assets/images/studio'; 
+        $config['allowed_types'] = 'gif|jpg|png|JPG|JPEG|PNG'; 
+		$config['overwrite'] = TRUE;
+		
+        $this->load->library('upload', $config);
 
-		redirect('admin/studio/v_studio');
+		if (!$this->upload->do_upload('gambar'))
+        {
+            $error = $this->upload->display_errors();
+            $this->load->view('admin/studio/v_studio_tambah', compact('error'));
+		}
+		else 
+		{
+			$nama_studio= $this->input->post('nama_studio');
+			$tarif= $this->input->post('tarif');
+			$deskripsi= $this->input->post('deskripsi');
+	
+			$data = array(
+				'nama_studio' => $nama_studio,
+				'tarif' => $tarif,
+				'deskripsi' => $deskripsi,
+				'gambar'=> $this->upload->data('file_name'),
+				);
+
+			$upload_data = $this->upload->data(); 
+			$this->m_studio->simpan_data($data,'studio');
+
+			redirect('admin/studio/v_studio');
+		}
+		
 	}
 
 	public function update()
@@ -43,7 +61,7 @@ class Studio extends CI_Controller {
 		$tarif= $this->input->post('tarif');
 		$deskripsi= $this->input->post('deskripsi');
 		
-		
+		 
 		$data = array(
 			'nama_studio' => $nama_studio,
 			'tarif' => $tarif,

@@ -13,7 +13,11 @@
   </div>
   <div class="card-body">
 
-  <form method="POST" action="<?=base_url('admin/studio/simpan') ?>">
+  <?php 
+           echo form_open_multipart('admin/studio/simpan');
+           if (isset($error))
+           echo '<p>'.$error.'</p>';
+        ?>
   <div class="form-group">
     <label>Nama Studio</label>
     <input type="text" class="form-control" name="nama_studio" placeholder="Masukan nama studio" required>
@@ -31,8 +35,14 @@
     <input type="file" class="form-control" name="gambar">
   </div>
   <button type="submit" class="btn btn-primary">SIMPAN</button>
-</form>
-
+  <?php 
+              echo form_close(); 
+              if(isset($upload_data)):
+        ?>
+        <p> <?php echo $this->session->flashdata('upload_sukses');?><p>
+        <?php 
+         endif;
+        ?>
   </div>
 </div>
 

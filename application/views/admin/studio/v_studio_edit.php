@@ -31,6 +31,7 @@
   <div class="form-group">
     <label>Foto</label>
     <input type="file" class="form-control" name="gambar">
+    <img src="<?php echo base_url();?>/assets/images/studio/<?php echo $u->gambar ?>" class="img-thumbnail" width="50%">
   </div>
   <button type="submit" class="btn btn-success">UPDATE</button>
 </form>
