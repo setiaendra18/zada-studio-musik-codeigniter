@@ -5,37 +5,43 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="description" content="Fusion Studio Musik">
     <meta name="author" content="Template Mo">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <meta name="theme-color" content="#2F3BA2" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="FUSION STUDIO MUSIK">
+    <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
 
+
+    
+    <link rel="icon" href="demo_icon.gif" type="image/gif" sizes="16x16">
     <title>FUSION Studio Musik Yogyakarta</title>
-<!--
 
-ART FACTORY
-
-https://templatemo.com/tm-537-art-factory
-
--->
-    <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/templatemo-art-factory.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/owl-carousel.css">
+    
+    
+    <link rel="manifest" href="<?php echo base_url();?>/manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('<?php echo base_url();?>serviceworker.js')
+        .then((reg) => {
+          console.log('Service worker registered.', reg);
+        });
+  });
+}
+    </script>
+    
 
     </head>
     
     <body>
     
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
+   
     
     
     <!-- ***** Header Area Start ***** -->

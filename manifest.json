@@ -1,0 +1,23 @@
+{
+  "name": "FUSION STUDIO MUSIK",
+  "short_name": "FUSION",
+  "icons": [{
+    "src": "http://localhost/proyek-web/zada-studio-musik-codeigniter/assets/images/icon/128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+     {
+      "src": "http://localhost/proyek-web/zada-studio-musik-codeigniter/assets/images/icon/256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }, {
+      "src": "http://localhost/proyek-web/zada-studio-musik-codeigniter/assets/images/icon/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }],
+  "start_url": "http://localhost/proyek-web/zada-studio-musik-codeigniter/",
+  "display": "standalone",
+  "background_color": "#3E4EB8",
+  "theme_color": "#2F3BA2"
+}

@@ -22,6 +22,7 @@
     
     <!-- jQuery -->
     <script src="<?php echo base_url();?>/assets/js/jquery-2.1.0.min.js"></script>
+   
 
     <!-- Bootstrap -->
     <script src="<?php echo base_url();?>/assets/js/popper.js"></script>
@@ -36,6 +37,10 @@
     
     <!-- Global Init -->
     <script src="<?php echo base_url();?>/assets/js/custom.js"></script>
+    
+   
 
+
+</script>
   </body>
 </html>
