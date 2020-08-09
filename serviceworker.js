@@ -1,10 +1,9 @@
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
   '/',
-  'http://localhost/proyek-web/zada-studio-musik-codeigniter/assets/css/bootstrap.min.css',
-  'http://localhost/proyek-web/zada-studio-musik-codeigniter/assets/css/font-awesome.css',
-  'http://localhost/proyek-web/zada-studio-musik-codeigniter/assets/css/templatemo-art-factory.css',
-  'http://localhost/proyek-web/zada-studio-musik-codeigniter/assets/css/owl-carousel.css'
+  'http://localhost/proyek-web/zada-studio-musik-codeigniter/pendaftaran',
+  'http://localhost/proyek-web/zada-studio-musik-codeigniter/login',
+  'http://localhost/proyek-web/zada-studio-musik-codeigniter/jadwal',
 ];
 
 self.addEventListener('install', e => {
