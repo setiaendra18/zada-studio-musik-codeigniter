@@ -11,6 +11,7 @@ class Transaksi extends CI_Controller {
 
 	public function index()
 	{
+		$data['session'] = $this->session->userdata();
 		$data['transaksi'] = $this->m_transaksi->tampil_data()->result();
 		$this->load->view('admin/transaksi/v_transaksi',$data);
 	}
@@ -34,6 +35,7 @@ class Transaksi extends CI_Controller {
 	public function edit($id_transaksi)
 	{
 	
+		$data['session'] = $this->session->userdata();
 		$data['transaksi'] = $this->m_transaksi->edit_data($id_transaksi,'transaksi_sewa')->result();
 		$this->load->view('admin/transaksi/v_transaksi_edit',$data);
 	}

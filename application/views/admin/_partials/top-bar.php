@@ -16,7 +16,7 @@
             <div class="topbar-divider d-none d-sm-block"></div>
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-            <a href=<?php echo base_url('login/logout') ?>>logout (<?php echo $this->session->userdata("nama_admin") ?> )</a>
+            <a href=<?php echo base_url('login/logout') ?>>logout (<?php echo $session['login_admin']['admin_nama'];?>)</a>
             </li>
 
           </ul>

@@ -11,13 +11,15 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
+		$data['session'] = $this->session->userdata();
 		$data['admin'] = $this->m_admin->tampil_data()->result();
 		$this->load->view('admin/admin/v_admin',$data);
 	}
 
 	public function tambah()
 	{
-		$this->load->view('admin/admin/v_admin_tambah');
+		$data['session'] = $this->session->userdata();
+		$this->load->view('admin/admin/v_admin_tambah',$data);
 	}
 
 	public function simpan()
@@ -67,6 +69,7 @@ class Admin extends CI_Controller {
 
 	public function edit($id_admin)
 	{
+		$data['session'] = $this->session->userdata();
 		$where = array('id_admin' => $id_admin);
 		$data['admin'] = $this->m_admin->edit_data($where,'admin')->result();
 		$this->load->view('admin/admin/v_admin_edit',$data);

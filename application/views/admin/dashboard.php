@@ -4,7 +4,7 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-      
+            <h2>Selamat Datang Admin <?php echo $session['login_admin']['admin_nama'];?></h2>
         </div>
         <!-- /.container-fluid -->
 

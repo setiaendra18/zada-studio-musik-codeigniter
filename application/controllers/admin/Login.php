@@ -29,10 +29,10 @@ class Login extends CI_Controller {
 		if($cek > 0){
  
 			$data_session = array(
-				'id_admin'=> $data['id_admin'],
-				'nama_admin' => $data['nama_admin'],
-				'username' => $username,
-				'status' => "login"
+				'admin_id'=> $data['id_admin'],
+				'admin_nama' => $data['nama_admin'],
+				'admin_username' => $username,
+				'admin_status' => "login"
 				);
 				
 			$this->session->set_userdata('login_admin',$data_session);

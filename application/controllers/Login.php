@@ -29,16 +29,16 @@ class Login extends CI_Controller {
 		
 	
 		if($cek > 0){
- 
+			// echo "here";exit();
 			$data_session = array(
-				'id_member'=> $data['id_member'],
-				'nama_member' => $data['nama_member'],
-				'username' => $username,
-				'status' => "login"
+				'member_id'=> $data['id_member'],
+				'member_nama' => $data['nama_member'],
+				'member_username' => $username,
+				'member_status' => "login"
 				);
  
 			$this->session->set_userdata($data_session);
- 
+			
 			redirect(base_url("/"));
  
 		}else{

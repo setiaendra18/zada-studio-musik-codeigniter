@@ -11,13 +11,15 @@ class Member extends CI_Controller {
 
 	public function index()
 	{
+		$data['session'] = $this->session->userdata();
 		$data['member'] = $this->m_member->tampil_data()->result();
 		$this->load->view('admin/member/v_member',$data);
 	}
 
 	public function tambah()
 	{
-		$this->load->view('admin/member/v_member_tambah');
+		$data['session'] = $this->session->userdata();
+		$this->load->view('admin/member/v_member_tambah',$data);
 	}
 
 	public function simpan()
@@ -61,6 +63,7 @@ class Member extends CI_Controller {
 
 	public function edit($id_member)
 	{
+		$data['session'] = $this->session->userdata();
 		$where = array('id_member' => $id_member);
 		$data['member'] = $this->m_member->edit_data($where,'member')->result();
 		$this->load->view('admin/member/v_member_edit',$data);

@@ -60,7 +60,7 @@
                             <?php 
 
 
-if($this->session->userdata('username')=="")
+if($this->session->userdata('member_username')=="")
 {
     echo "";
 }
@@ -75,7 +75,7 @@ else
 
 <?php 
     
-    if($this->session->userdata('username')=="")
+    if($this->session->userdata('member_username')=="")
     {
     ?>
          <li ><a href="<?php echo base_url('pendaftaran') ?>">PENDAFTARAN</a></li>
@@ -96,7 +96,7 @@ else
 
                             <?php 
     
-                            if($this->session->userdata('username')=="")
+                            if($this->session->userdata('member_username')=="")
                             {
                             ?>
                                 <li><a href="<?php echo base_url('login') ?>" class='btn btn-sm btn-danger'>LOGIN</a>
@@ -106,7 +106,7 @@ else
                             else
                             {
                             ?>
-                                <li><a href=<?php echo base_url('login/logout') ?>>logout (<?php echo $this->session->userdata("nama_member") ?> )</a>
+                                <li><a href=<?php echo base_url('login/logout') ?>>logout (<?php echo $this->session->userdata("member_nama") ?> )</a>
                             <?php
                             }
 

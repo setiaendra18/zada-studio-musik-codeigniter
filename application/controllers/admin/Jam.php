@@ -6,18 +6,21 @@ class Jam extends CI_Controller {
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('m_jam');
-        $this->load->helper('url');
+		$this->load->helper('url');
+		
 	}
 
 	public function index()
 	{
+		$data['session'] = $this->session->userdata();
 		$data['jam'] = $this->m_jam->tampil_data()->result();
 		$this->load->view('admin/jam/v_jam',$data);
 	}
 
 	public function tambah()
 	{
-		$this->load->view('admin/jam/v_jam_tambah');
+		$data['session'] = $this->session->userdata();
+		$this->load->view('admin/jam/v_jam_tambah',$data);
 	}
 
 	public function simpan()
@@ -49,6 +52,7 @@ class Jam extends CI_Controller {
 
 	public function edit($jam)
 	{
+		$data['session'] = $this->session->userdata();
 		$where = array('id_jam' => $jam);
 		$data['jam'] = $this->m_jam->edit_data($where,'jam')->result();
 		$this->load->view('admin/jam/v_jam_edit',$data);

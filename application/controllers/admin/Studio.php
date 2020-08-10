@@ -7,17 +7,20 @@ class Studio extends CI_Controller {
 		parent::__construct();		
 		$this->load->model('m_studio');
 		$this->load->helper(array('form', 'url')); 
+		
 	}
-
+	
 	public function index()
 	{
+		$data['session'] = $this->session->userdata();
 		$data['studio'] = $this->m_studio->tampil_data()->result();
 		$this->load->view('admin/studio/v_studio',$data);
 	}
 
 	public function tambah()
 	{
-		$this->load->view('admin/studio/v_studio_tambah');
+		$data['session'] = $this->session->userdata();
+		$this->load->view('admin/studio/v_studio_tambah', $data);
 	}
 
 	public function simpan()
@@ -110,6 +113,7 @@ class Studio extends CI_Controller {
 
 	public function edit($id_studio)
 	{
+		$data['session'] = $this->session->userdata();
 		$where = array('id_studio' => $id_studio);
 		$data['studio'] = $this->m_studio->edit_data($where,'studio')->result();
 		$this->load->view('admin/studio/v_studio_edit',$data);

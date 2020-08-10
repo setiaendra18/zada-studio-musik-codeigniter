@@ -11,13 +11,15 @@ class Pembayaran extends CI_Controller {
 
 	public function index()
 	{
+		$data['session'] = $this->session->userdata();
 		$data['pembayaran'] = $this->m_pembayaran->tampil_data()->result();
 		$this->load->view('admin/pembayaran/v_pembayaran',$data);
 	}
 
 	public function tambah()
 	{
-		$this->load->view('admin/pembayaran/v_pembayaran_tambah');
+		$data['session'] = $this->session->userdata();
+		$this->load->view('admin/pembayaran/v_pembayaran_tambah',$data);
 	}
 
 
@@ -41,7 +43,7 @@ class Pembayaran extends CI_Controller {
 
 	public function edit($id_bayar)
 	{
-		
+		$data['session'] = $this->session->userdata();
 		$data['pembayaran'] = $this->m_pembayaran->edit_data($id_bayar,'bayar')->result();
 		$this->load->view('admin/pembayaran/v_pembayaran_edit',$data);
 	}
