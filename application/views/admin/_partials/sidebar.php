@@ -69,6 +69,20 @@
           </div>
         </div>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#transaksi2" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-users"></i>
+          <span>Laporan</span>
+        </a>
+        <div id="transaksi2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Laporan Transaksi</h6>
+            <a class="collapse-item" href="<?php echo base_url('admin/laporan') ?>">Laporan Transaksi</a>
+            
+          </div>
+        </div>
+      </li>
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 

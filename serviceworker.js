@@ -4,6 +4,7 @@ var urlsToCache = [
   'http://localhost/proyek-web/zada-studio-musik-codeigniter/pendaftaran',
   'http://localhost/proyek-web/zada-studio-musik-codeigniter/login',
   'http://localhost/proyek-web/zada-studio-musik-codeigniter/jadwal',
+  'http://localhost/proyek-web/zada-studio-musik-codeigniter/offline.html',
 ];
 
 self.addEventListener('install', e => {

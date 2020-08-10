@@ -111,11 +111,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    
                     <div class="item service-item">
                         
-                        <img src="<?php echo base_url();?>/assets/images/studio/<?php echo $u->gambar?>" class="img-fluid">
+                        <img src="<?php echo base_url();?>/assets/images/studio/<?php echo $u->gambar?>" width="150px" height="250px">
                         
                         <h5 class="service-title"><?= $u->nama_studio ?></h5>
                         <?= $u->deskripsi ?>
-                        <button class="main-button">IDR <?= $u->tarif ?></button>
+                        </br>
+                        <button class="btn btn-dark btn-block">IDR <?= $u->tarif ?> / JAM</button>
                     </div>
                   
                    

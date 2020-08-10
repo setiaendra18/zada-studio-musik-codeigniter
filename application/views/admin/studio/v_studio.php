@@ -37,7 +37,7 @@
 		?>
           <tr>
             <td><?= $no++ ?></td>
-            <td><img src="<?php echo base_url();?>/assets/images/studio/<?php echo $u->gambar ?>" class="img-fluid"></td>
+            <td><img src="<?php echo base_url();?>/assets/images/studio/<?php echo $u->gambar ?>" class="img-responsive" width="30%"></td>
             <td><?= $u->nama_studio ?></td>
             <td><?= $u->deskripsi ?></td>
             <td><?= $u->tarif ?></td>

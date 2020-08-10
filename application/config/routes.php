@@ -79,5 +79,7 @@ $route['admin/member/v_member_edit'] = 'admin/member/edit';
 $route['admin/member/v_admin'] = 'admin/admin';
 $route['admin/member/v_admin_edit'] = 'admin/admin/edit';
 
+$route['admin/laporan/v_laporan'] = 'admin/laporan';
+
 
 $route['admin/cek_login'] = 'admin/login/cek_login';

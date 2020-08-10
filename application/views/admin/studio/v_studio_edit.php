@@ -14,7 +14,11 @@
   <div class="card-body">
 
   <?php foreach($studio as $u){ ?>
-  <form method="POST" action="<?=base_url('admin/studio/update') ?>">
+    <?php 
+           echo form_open_multipart('admin/studio/update');
+           if (isset($error))
+           echo '<p>'.$error.'</p>';
+        ?>
   <input type="hidden" name="id_studio" value="<?php echo $u->id_studio ?>">
   <div class="form-group">
     <label>Nama Studio</label>
@@ -35,7 +39,15 @@
   </div>
   <button type="submit" class="btn btn-success">UPDATE</button>
 </form>
-<?php } ?>
+<?php 
+  }
+              echo form_close(); 
+              if(isset($upload_data)):
+        ?>
+        <p> <?php echo $this->session->flashdata('upload_sukses');?><p>
+        <?php 
+         endif;
+        ?>
   </div>
 </div>
 

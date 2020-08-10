@@ -4,7 +4,7 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-        <?= $data_session['id_admin'] ?>
+      
         </div>
         <!-- /.container-fluid -->
 

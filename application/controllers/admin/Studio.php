@@ -38,7 +38,7 @@ class Studio extends CI_Controller {
 			$nama_studio= $this->input->post('nama_studio');
 			$tarif= $this->input->post('tarif');
 			$deskripsi= $this->input->post('deskripsi');
-	
+
 			$data = array(
 				'nama_studio' => $nama_studio,
 				'tarif' => $tarif,
@@ -47,6 +47,7 @@ class Studio extends CI_Controller {
 				);
 
 			$upload_data = $this->upload->data(); 
+
 			$this->m_studio->simpan_data($data,'studio');
 
 			redirect('admin/studio/v_studio');
@@ -56,20 +57,55 @@ class Studio extends CI_Controller {
 
 	public function update()
 	{
-		$id_studio= $this->input->post('id_studio');
-		$nama_studio= $this->input->post('nama_studio');
-		$tarif= $this->input->post('tarif');
-		$deskripsi= $this->input->post('deskripsi');
+
+		$config['upload_path']   = './assets/images/studio'; 
+        $config['allowed_types'] = 'gif|jpg|png|JPG|JPEG|PNG'; 
+		$config['overwrite'] = TRUE;
+
+		$this->load->library('upload', $config);
+
+		if(!$this->upload->do_upload('gambar'))
+		{
+			$id_studio= $this->input->post('id_studio');
+			$nama_studio= $this->input->post('nama_studio');
+			$tarif= $this->input->post('tarif');
+			$deskripsi= $this->input->post('deskripsi');
 		
 		 
-		$data = array(
-			'nama_studio' => $nama_studio,
-			'tarif' => $tarif,
-			'deskripsi' => $deskripsi,
-			);
-		$where = array('id_studio' => $id_studio);
-		$this->m_studio->update_data($where,$data,'studio');
-		redirect('admin/studio/v_studio');
+			$data = array(
+				'nama_studio' => $nama_studio,
+				'tarif' => $tarif,
+				'deskripsi' => $deskripsi,
+				);
+
+			$where = array('id_studio' => $id_studio);
+			$this->m_studio->update_data($where,$data,'studio');
+
+			redirect('admin/studio/v_studio');
+		}
+		else
+		{
+			$id_studio= $this->input->post('id_studio');
+			$nama_studio= $this->input->post('nama_studio');
+			$tarif= $this->input->post('tarif');
+			$deskripsi= $this->input->post('deskripsi');
+
+			$data = array(
+				'nama_studio' => $nama_studio,
+				'tarif' => $tarif,
+				'deskripsi' => $deskripsi,
+				'gambar'=> $this->upload->data('file_name'),
+				);
+
+			$upload_data = $this->upload->data(); 
+
+			$where = array('id_studio' => $id_studio);
+			$this->m_studio->update_data($where,$data,'studio');
+			
+			
+			redirect('admin/studio/v_studio');	
+		}
+		
 	}
 
 	public function edit($id_studio)
