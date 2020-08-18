@@ -117,6 +117,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <?= $u->deskripsi ?>
                         </br>
                         <button class="btn btn-dark btn-block">IDR <?= $u->tarif ?> / JAM</button>
+
+                        <!-- TAMBAHKAN INI -->
+
+                        <a href="https://api.whatsapp.com/send?phone=+628123456789&text=Halo
+                         Fusion Studio Bisa Pesan Studio (<?= $u->nama_studio ?> )" class="btn btn-success btn-block"> 
+                         <i class="fa fa-whatsapp"></i> Whatsapp</a>
+
+                        <!-- -->
+                       
                     </div>
                   
                    

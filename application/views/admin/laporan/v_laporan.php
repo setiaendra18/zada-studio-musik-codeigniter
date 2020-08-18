@@ -16,8 +16,11 @@
 
 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
   <h6 class="m-0 font-weight-bold text-primary">Data Laporan</h6>
+  <div>
+  <button onclick="printDiv('printableArea')" value="Print Invoice" class="btn btn-danger">Print</button>
   </div>
-  <div class="card-body">
+  </div>
+  <div id="printableArea" class="card-body">
     <div >
       <table class="table table-bordered table-responsive" id="dataTable">
         <thead>
@@ -32,7 +35,7 @@
            
             <th>Status Pemesanan</th>
             <th>Status Bayar</th>
-            <th>Aksi</th>
+           
           
           </tr>
         </thead>
@@ -73,15 +76,7 @@
         <?php } ?>
         
       </td>
-            <td>
-            <a href="<?= base_url('admin/transaksi/edit/')?><?= trim($u->id_transaksi) ?>" class="btn btn-success btn-circle btn-sm">
-                    <i class="fas fa-edit"></i>
-                  </a>
-         
-              <a href="<?= base_url('admin/transaksi/hapus/') ?><?= trim($u->id_transaksi)?>" class="btn btn-danger btn-circle btn-sm">
-                    <i class="fas fa-trash"></i>
-                  </a>
-            </td>
+        
           </tr>
           <?php } ?>
       </table>
@@ -90,6 +85,16 @@
 </div>
 
 </div>
-<!-- /.container-fluid -->
 
+
+<!-- /.container-fluid -->
+<script type="text/javascript">
+function printDiv(divName) {
+    var printContents = document.getElementById(divName).innerHTML;
+    var originalContents = document.body.innerHTML;
+    document.body.innerHTML = printContents;
+    window.print();
+    document.body.innerHTML = originalContents;
+}
+</script>
 <?php $this->load->view("admin/_partials/footer.php") ?>

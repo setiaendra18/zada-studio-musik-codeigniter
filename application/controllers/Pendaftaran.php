@@ -28,7 +28,7 @@ class Pendaftaran extends CI_Controller {
  
 		$data = array(
 			'nama_member' => $nama_member,
-			'alamat' => $username,
+			'username' => $username,
 			'password' => $password,
 			'email' => $email,
 			'alamat' => $alamat,
